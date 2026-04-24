@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* XplosiveWebTech Design System
+   Primary: #024F94 | Secondary: #053554 | Accent: #22C55E
+   All colors HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 206 87% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 206 87% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 206 87% 17%;
+
+    /* #024F94 */
+    --primary: 209 98% 29%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 209 95% 45%;
+
+    /* #053554 */
+    --secondary: 206 87% 17%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.5%;
+    --muted-foreground: 215 20% 40%;
+
+    /* #22C55E */
+    --accent: 142 71% 45%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 142 76% 55%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 209 98% 29%;
+
+    --radius: 0.85rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(206 87% 12%) 0%, hsl(209 98% 22%) 50%, hsl(209 95% 35%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-glow)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-radial: radial-gradient(circle at 50% 0%, hsl(209 98% 35% / 0.15), transparent 70%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -8px hsl(206 87% 17% / 0.12);
+    --shadow-card: 0 10px 40px -15px hsl(209 98% 29% / 0.18);
+    --shadow-elevated: 0 20px 60px -20px hsl(209 98% 29% / 0.35);
+    --shadow-glow: 0 0 60px hsl(209 95% 45% / 0.4);
+    --shadow-accent-glow: 0 0 40px hsl(142 71% 45% / 0.45);
+
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 206 87% 8%;
+    --foreground: 210 40% 98%;
+    --card: 206 87% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 206 87% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 209 95% 55%;
+    --primary-foreground: 206 87% 10%;
+    --secondary: 206 60% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 206 50% 18%;
+    --muted-foreground: 215 20% 70%;
+    --accent: 142 71% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 206 50% 22%;
+    --input: 206 50% 22%;
+    --ring: 209 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+  .gradient-hero { background: var(--gradient-hero); }
+  .gradient-primary { background: var(--gradient-primary); }
+  .gradient-accent { background: var(--gradient-accent); }
+  .gradient-card { background: var(--gradient-card); }
+  .gradient-radial { background: var(--gradient-radial); }
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-light {
+    background: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(142 76% 75%) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-elevated { box-shadow: var(--shadow-elevated); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-accent-glow { box-shadow: var(--shadow-accent-glow); }
+  .transition-smooth { transition: var(--transition-smooth); }
+  .transition-bounce { transition: var(--transition-bounce); }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(hsl(0 0% 100% / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 100% / 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+}
+
+@layer components {
+  .container-tight {
+    @apply container max-w-6xl;
+  }
+}
