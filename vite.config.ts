@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/landing-page-xplosive-webtech/",
+  base: "/landing-page-xplosive-webtech",
   server: {
     host: "::",
     port: 3000,
