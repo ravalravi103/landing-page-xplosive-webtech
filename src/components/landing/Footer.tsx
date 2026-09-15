@@ -21,7 +21,7 @@ const Footer = () => {
                 { Icon: Twitter, href: " https://x.com/xplosivewebTech", label: "Twitter" },
                 { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61563686884533", label: "Facebook" },
                 { Icon: Instagram, href: "https://www.instagram.com/info.xplosivewebtech/", label: "Instagram" },
-                { Icon: Linkedin, href: "https://www.linkedin.com/in/raviraval103/", label: "LinkedIn" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/company/xplosive-webtech/", label: "LinkedIn" },
               ].map(({ Icon, href, label }) => (
                 <a
                   key={label}
