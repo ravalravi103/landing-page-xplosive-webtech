@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Card } from "@/components/ui/card";
 import {
   Carousel,
@@ -53,6 +53,8 @@ const testimonials = [
   },
 ];
 
+const AUTOPLAY_DELAY = 3500;
+
 const Testimonials = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -64,6 +66,18 @@ const Testimonials = () => {
     setCurrent(api.selectedScrollSnap());
     api.on("select", () => setCurrent(api.selectedScrollSnap()));
   }, [api]);
+
+  // Auto-advance loop
+  const advance = useCallback(() => {
+    if (!api) return;
+    api.scrollNext();
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+    const id = setInterval(advance, AUTOPLAY_DELAY);
+    return () => clearInterval(id);
+  }, [api, advance]);
 
   return (
     <section className="py-12 md:py-16 bg-secondary text-primary-foreground relative overflow-hidden">
@@ -122,7 +136,7 @@ const Testimonials = () => {
             ))}
           </CarouselContent>
 
-          {/* Prev / Next — positioned outside cards on large screens */}
+          {/* Prev / Next */}
           <CarouselPrevious className="hidden sm:flex -left-5 bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white" />
           <CarouselNext className="hidden sm:flex -right-5 bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white" />
         </Carousel>
