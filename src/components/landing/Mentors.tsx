@@ -138,14 +138,14 @@ const Mentors = () => {
   }, [api, paused]);
 
   return (
-    <section id="mentors" className="py-12 md:py-20">
+    <section id="mentors" className="py-12 md:py-20 bg-secondary">
       <div className="container-tight">
         <div data-reveal className="max-w-2xl mx-auto text-center">
           <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary">Faculty</span>
-          <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-secondary">
+          <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-white">
             Learn from <span className="text-gradient">working professionals</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-4 text-white/60">
             Our mentors are active industry professionals — not just teachers. Real experience, real projects, real guidance.
           </p>
         </div>

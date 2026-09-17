@@ -107,14 +107,18 @@ const AboutUs = () => {
             </div>
 
             {/* Founder quote */}
-            <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6">
-              <Quote className="w-7 h-7 text-primary/40 mb-3" />
-              <blockquote className="text-secondary font-medium leading-relaxed text-sm italic">
-                "{founder.quote}"
-              </blockquote>
-              <p className="mt-4 text-xs text-muted-foreground font-semibold">
-                — {founder.name}, {founder.title}
-              </p>
+            <div className="rounded-2xl border border-primary/40 bg-primary/8 p-6 relative overflow-hidden">
+              {/* Blue left accent bar */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl bg-primary" />
+              <div className="pl-4">
+                <Quote className="w-7 h-7 text-primary mb-3" />
+                <blockquote className="text-secondary font-medium leading-relaxed text-sm italic">
+                  "{founder.quote}"
+                </blockquote>
+                <p className="mt-4 text-xs text-primary font-semibold">
+                  — {founder.name}, {founder.title}
+                </p>
+              </div>
             </div>
 
           </div>

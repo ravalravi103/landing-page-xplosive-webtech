@@ -1,4 +1,5 @@
-import { Facebook, Twitter, Instagram, Linkedin, MessageCircle, Mail } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo2 from "../../assets/website_white_png.png"
 
 const Footer = () => {
@@ -6,19 +7,16 @@ const Footer = () => {
     <footer className="bg-secondary text-primary-foreground pt-16 pb-8">
       <div className="container-tight">
         <div className="grid md:grid-cols-4 gap-10">
-          <div className="md:col-span-2">
-            {/* <div className="flex items-center gap-2 font-display font-bold text-lg">
-              <span className="w-8 h-8 rounded-lg gradient-accent grid place-items-center text-accent-foreground">X</span>
-              XplosiveWebTech
-            </div> */}
-            <img src={logo2} alt="" width={300} />
-            <p className="mt-4 text-sm text-white/70 max-w-sm leading-relaxed">
+          {/* Brand + Social */}
+          <div className="md:col-span-1">
+            <img src={logo2} alt="XplosiveWebTech" width={220} />
+            <p className="mt-4 text-sm text-white/70 leading-relaxed">
               From Beginner to Job-Ready Engineer. Live mentor-led bootcamp for the next generation of software engineers.
             </p>
             <div className="mt-5 flex gap-3">
               {[
-                { Icon: MessageCircle, href: "https://wa.me/9987896573", label: "WhatsApp" },
-                { Icon: Twitter, href: " https://x.com/xplosivewebTech", label: "Twitter" },
+                { Icon: MessageCircle, href: "https://wa.me/919987896573", label: "WhatsApp" },
+                { Icon: Twitter, href: "https://x.com/xplosivewebTech", label: "Twitter" },
                 { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61563686884533", label: "Facebook" },
                 { Icon: Instagram, href: "https://www.instagram.com/info.xplosivewebtech/", label: "Instagram" },
                 { Icon: Linkedin, href: "https://www.linkedin.com/company/xplosive-webtech/", label: "LinkedIn" },
@@ -37,6 +35,7 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Programs */}
           <div>
             <h4 className="font-display font-semibold mb-4">Programs</h4>
             <ul className="space-y-2 text-sm text-white/70">
@@ -47,20 +46,69 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Company */}
           <div>
             <h4 className="font-display font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-white/70">
               <li><a href="#why-us" className="hover:text-accent transition-smooth">Why Us</a></li>
-              {/* <li><a href="#pricing" className="hover:text-accent transition-smooth">Pricing</a></li> */}
+              <li><a href="#about" className="hover:text-accent transition-smooth">About Us</a></li>
               <li><a href="#faq" className="hover:text-accent transition-smooth">FAQ</a></li>
-              <li className="flex items-center gap-2"><Mail className="w-3.5 h-3.5" />info.xplosivewebtech@gmail.com</li>
+              <li><Link to="/privacy-policy" className="hover:text-accent transition-smooth">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="hover:text-accent transition-smooth">Terms of Service</Link></li>
+            </ul>
+          </div>
+
+          {/* Contact — critical for Google Ads NAP consistency */}
+          <div>
+            <h4 className="font-display font-semibold mb-4">Contact Us</h4>
+            <ul className="space-y-3 text-sm text-white/70">
+              <li>
+                <a
+                  href="tel:+919987896573"
+                  className="flex items-start gap-2 hover:text-accent transition-smooth"
+                >
+                  <Phone className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                  +91 99878 96573
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info.xplosivewebtech@gmail.com"
+                  className="flex items-start gap-2 hover:text-accent transition-smooth"
+                >
+                  <Mail className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                  info.xplosivewebtech@gmail.com
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                <span>Mumbai, Maharashtra, India</span>
+              </li>
+              <li className="pt-1">
+                <a
+                  href="https://wa.me/919987896573?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20demo%20session."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-600 hover:bg-green-500 text-white text-xs font-medium transition-smooth"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  Chat on WhatsApp
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60">
+        {/* Bottom bar */}
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/60">
           <p>© {new Date().getFullYear()} XplosiveWebTech. All rights reserved.</p>
-          <p>Built for engineers, by engineers.</p>
+          <div className="flex items-center gap-4">
+            <Link to="/privacy-policy" className="hover:text-accent transition-smooth">Privacy Policy</Link>
+            <span>·</span>
+            <Link to="/terms-of-service" className="hover:text-accent transition-smooth">Terms of Service</Link>
+            <span>·</span>
+            <span>Built for engineers, by engineers.</span>
+          </div>
         </div>
       </div>
     </footer>
