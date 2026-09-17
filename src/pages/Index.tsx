@@ -5,6 +5,7 @@ import Programs from "@/components/landing/Programs";
 import ProgramComparison from "@/components/landing/ProgramComparison";
 import WhyUs from "@/components/landing/WhyUs";
 import Curriculum from "@/components/landing/Curriculum";
+import TechStack from "@/components/landing/TechStack";
 import Mentors from "@/components/landing/Mentors";
 import Testimonials from "@/components/landing/Testimonials";
 import FAQ from "@/components/landing/FAQ";
@@ -19,6 +20,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Programs />
+      <TechStack />
       <WhyUs />
       <AboutUs />
       <Mentors />
