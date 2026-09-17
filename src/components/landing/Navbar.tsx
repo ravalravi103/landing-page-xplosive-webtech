@@ -6,9 +6,9 @@ import logo2 from "../../assets/website_logo.png"
 
 const links = [
   { label: "Programs", href: "#programs" },
+  { label: "Compare", href: "#compare" },
   { label: "Why Us", href: "#why-us" },
   { label: "Curriculum", href: "#curriculum" },
-  // { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -31,7 +31,7 @@ const Navbar = () => {
         </nav>
         <div className="hidden md:block">
           <Button variant="hero" size="sm" asChild>
-            <a href="#cta">Book Free Demo</a>
+            <a href="https://wa.me/919987896573?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20demo%20session.%20Please%20share%20the%20details." target="_blank" rel="noopener noreferrer">Book Free Demo</a>
           </Button>
         </div>
         <button className="md:hidden text-secondary" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -47,11 +47,12 @@ const Navbar = () => {
               </a>
             ))}
             <Button variant="hero" asChild onClick={() => setOpen(false)}>
-              <a href="#cta">Book Free Demo</a>
+              <a href="https://wa.me/919987896573?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20demo%20session.%20Please%20share%20the%20details." target="_blank" rel="noopener noreferrer">Book Free Demo</a>
             </Button>
           </div>
         </div>
       )}
+      <div className="scroll-progress-bar" aria-hidden="true" />
     </header>
   );
 };

@@ -10,9 +10,9 @@ const modules = [
 
 const Curriculum = () => {
   return (
-    <section id="curriculum" className="py-20 md:py-28">
+    <section id="curriculum" className="py-12 md:py-16">
       <div className="container-tight">
-        <div className="max-w-2xl mx-auto text-center">
+        <div data-reveal className="max-w-2xl mx-auto text-center">
           <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary">Curriculum</span>
           <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-secondary">
             A 90-day path to <span className="text-gradient">becoming hireable</span>
@@ -26,15 +26,14 @@ const Curriculum = () => {
           {modules.map((m, i) => (
             <Card
               key={m.phase}
-              className="p-6 md:p-8 gradient-card border-border/70 shadow-soft hover:shadow-card transition-smooth animate-fade-in-up"
-              style={{ animationDelay: `${i * 80}ms` }}
+              className="scroll-card card-line-hover group p-6 md:p-8 gradient-card border-border/70 shadow-soft hover:shadow-elevated hover:-translate-y-2 hover:border-accent/40 transition-smooth"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <div className="text-xs font-semibold tracking-wider uppercase text-accent">{m.weeks}</div>
                   <h3 className="mt-1 font-display text-xl font-bold text-secondary">{m.phase}</h3>
                 </div>
-                <div className="w-10 h-10 rounded-full gradient-primary text-primary-foreground grid place-items-center font-display font-bold shadow-card flex-shrink-0">
+                <div className="icon-spring w-10 h-10 rounded-full gradient-primary text-primary-foreground grid place-items-center font-display font-bold shadow-card flex-shrink-0 group-hover:shadow-accent-glow">
                   {i + 1}
                 </div>
               </div>

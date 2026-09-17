@@ -146,3 +146,135 @@
     @apply container max-w-6xl;
   }
 }
+
+/* =====================
+   CARD HOVER EFFECTS
+   ===================== */
+
+/* Gradient top-edge line that appears on hover */
+.card-line-hover {
+  position: relative;
+}
+.card-line-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  border-radius: 0 0 2px 2px;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+.card-line-hover:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Springy icon animation — use with Tailwind group on parent */
+.icon-spring {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.group:hover .icon-spring {
+  transform: scale(1.18) rotate(6deg);
+}
+
+/* Parallax — GPU-accelerated background transforms */
+[data-parallax] {
+  will-change: transform;
+}
+
+/* Section reveal — JS-based fallback (IntersectionObserver adds .is-visible) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(48px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================================================
+   CSS SCROLL-DRIVEN ANIMATIONS
+   Native in Chrome 115+, Firefox 128+, Safari 18+.
+   Falls back to the JS IntersectionObserver above.
+   ===================================================== */
+
+@keyframes sdca-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes sdca-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(64px) scale(0.94);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes sdca-card-up {
+  from {
+    opacity: 0;
+    transform: translateY(80px) scale(0.88);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Scroll progress bar — thin gradient line below navbar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 49;
+  pointer-events: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress-bar {
+    animation-name: sdca-fill;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(root);
+  }
+}
+
+/* Cards: animate in via CSS scroll-driven when supported.
+   Starts at entry 30% so cards are meaningfully in view before animating.
+   Spans ~450 px of scroll — clearly visible at normal scroll speed. */
+@supports (animation-timeline: view()) {
+  .scroll-card {
+    animation-name: sdca-card-up;
+    animation-duration: 0.8s;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 30% contain 40%;
+  }
+}
+
+/* [data-reveal] headings are handled by the JS IntersectionObserver
+   in useScrollEffects.ts — this ensures they only animate once the section
+   is clearly in the viewport (not on page load). */

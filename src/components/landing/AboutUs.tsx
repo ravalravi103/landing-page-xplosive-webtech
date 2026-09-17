@@ -40,17 +40,17 @@ const AboutUs = () => {
         </div>
 
         {/* Two-column: photo left, content right */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-3 gap-10 lg:gap-14 items-start">
 
           {/* Left — founder card */}
-          <div data-reveal className="flex flex-col items-center lg:items-start gap-6">
+          <div data-reveal className="lg:col-span-1 flex flex-col items-center lg:items-start gap-6">
 
             {/* Photo / avatar */}
             <div className="relative">
               {/* Decorative ring */}
               <div className="absolute inset-0 rounded-2xl gradient-primary opacity-20 blur-xl scale-105" />
 
-              {/* TODO: swap the div below for <img src="/founder.jpg" ... /> once photo is added */}
+              {/* TODO: swap the div below for <img src="/founder.jpg" ... className="w-full h-80 object-cover rounded-2xl" /> once photo is added */}
               <div className="relative w-64 h-72 md:w-72 md:h-80 rounded-2xl gradient-primary flex flex-col items-center justify-center shadow-elevated">
                 <span className="font-display font-bold text-6xl text-primary-foreground/80">
                   {founder.initials}
@@ -82,7 +82,7 @@ const AboutUs = () => {
           </div>
 
           {/* Right — Vision, Mission, quote */}
-          <div data-reveal className="flex flex-col gap-7">
+          <div data-reveal className="lg:col-span-2 flex flex-col gap-7">
 
             {/* Vision */}
             <div className="rounded-2xl border border-border/70 bg-background p-6 shadow-soft">

@@ -40,10 +40,10 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Programs</h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li><a href="#programs" className="hover:text-accent transition-smooth">Frontend + AI</a></li>
-              <li><a href="#programs" className="hover:text-accent transition-smooth">Backend + AI</a></li>
-              <li><a href="#programs" className="hover:text-accent transition-smooth">Full Stack + AI</a></li>
-              <li><a href="#programs" className="hover:text-accent transition-smooth">Cloud Engineering</a></li>
+              <li><a href="#programs" className="hover:text-accent transition-smooth">Self-Paced Full Stack</a></li>
+              <li><a href="#programs" className="hover:text-accent transition-smooth">Live Online Full Stack + AI</a></li>
+              <li><a href="#programs" className="hover:text-accent transition-smooth">Offline Full Stack + AI Career</a></li>
+              <li><a href="#programs" className="hover:text-accent transition-smooth">1:1 Career Mentorship</a></li>
             </ul>
           </div>
 
