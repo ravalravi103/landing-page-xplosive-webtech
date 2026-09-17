@@ -51,9 +51,9 @@ const row2: Tech[] = [
 ];
 
 const Chip = ({ name, icon: Icon, color }: Tech) => (
-  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-background/70 text-secondary text-sm font-semibold whitespace-nowrap shadow-soft mx-2 backdrop-blur-sm select-none">
+  <span className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-border/50 bg-background/70 text-secondary text-lg font-semibold whitespace-nowrap shadow-soft mx-3 backdrop-blur-sm select-none">
     {/* @ts-ignore — lucide and react-icons share compatible prop shapes */}
-    <Icon size={16} style={{ color }} />
+    <Icon size={26} style={{ color }} />
     {name}
   </span>
 );
