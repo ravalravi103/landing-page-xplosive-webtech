@@ -2,8 +2,8 @@ import { Eye, Target, Quote } from "lucide-react";
 
 // TODO: Replace all placeholder values below with real content.
 const founder = {
-  initials: "FN",
-  name: "Founder Name",
+  initials: "PR",
+  name: "Pooja Raval",
   title: "Founder & CEO, XplosiveWebTech",
   quote:
     "I started XplosiveWebTech because I saw talented people fail to get jobs — not because they lacked ability, but because their training was disconnected from what companies actually need. We built this institute to bridge that gap: real skills, real projects, real mentors.",
