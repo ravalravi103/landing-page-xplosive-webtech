@@ -2,7 +2,6 @@ import { Eye, Target, Quote } from "lucide-react";
 
 // TODO: Replace all placeholder values below with real content.
 const founder = {
-  // photo: "/founder.jpg",  // uncomment and add photo to public/ when ready
   initials: "FN",
   name: "Founder Name",
   title: "Founder & CEO, XplosiveWebTech",
@@ -50,15 +49,11 @@ const AboutUs = () => {
               {/* Decorative ring */}
               <div className="absolute inset-0 rounded-2xl gradient-primary opacity-20 blur-xl scale-105" />
 
-              {/* TODO: swap the div below for <img src="/founder.jpg" ... className="w-full h-80 object-cover rounded-2xl" /> once photo is added */}
-              <div className="relative w-64 h-72 md:w-72 md:h-80 rounded-2xl gradient-primary flex flex-col items-center justify-center shadow-elevated">
-                <span className="font-display font-bold text-6xl text-primary-foreground/80">
-                  {founder.initials}
-                </span>
-                <span className="mt-3 text-primary-foreground/60 text-sm tracking-wide">
-                  Photo Coming Soon
-                </span>
-              </div>
+              <img
+                src="/WX_founder.png"
+                alt={`${founder.name} — ${founder.title}`}
+                className="relative w-64 h-72 md:w-72 md:h-80 rounded-2xl object-cover shadow-elevated"
+              />
             </div>
 
             {/* Name + title */}
