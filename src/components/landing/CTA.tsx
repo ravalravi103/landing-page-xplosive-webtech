@@ -13,8 +13,18 @@ const stats = [
 
 const CTA = () => {
   return (
-    <section id="cta" className="relative overflow-hidden bg-background">
+    <section id="cta" className="relative overflow-hidden bg-gradient-to-b from-muted/40 to-background">
       <div className="relative flex flex-col md:flex-row min-h-[520px]">
+        {/* Image — fades into background on the right edge */}
+        <div className="hidden md:block relative w-[45%] flex-shrink-0">
+          <img
+            src={heroBg}
+            alt="Students learning at XplosiveWebTech"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-background via-background/20 to-transparent" />
+        </div>
+
         {/* Content */}
         <div className="flex-1 flex items-center py-16 md:py-20 px-6 sm:px-10 md:px-16 lg:px-24">
           <div data-reveal className="max-w-xl w-full">
@@ -56,16 +66,6 @@ const CTA = () => {
               Limited seats per cohort · Next batch starts soon
             </p>
           </div>
-        </div>
-
-        {/* Image — fades into white on the left edge */}
-        <div className="hidden md:block relative w-[45%] flex-shrink-0">
-          <img
-            src={heroBg}
-            alt="Students learning at XplosiveWebTech"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent" />
         </div>
       </div>
     </section>

@@ -4,13 +4,13 @@ import logo2 from "../../assets/website_white_png.png"
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-primary-foreground pt-16 pb-8">
+    <footer className="bg-muted/50 text-foreground pt-16 pb-8">
       <div className="container-tight">
         <div className="grid md:grid-cols-4 gap-10">
           {/* Brand + Social */}
           <div className="md:col-span-1">
             <img src={logo2} alt="XplosiveWebTech" width={220} />
-            <p className="mt-4 text-sm text-white/70 leading-relaxed">
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
               From Beginner to Job-Ready Engineer. Live mentor-led bootcamp for the next generation of software engineers.
             </p>
             <div className="mt-5 flex gap-3">
@@ -27,7 +27,7 @@ const Footer = () => {
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-white/10 hover:bg-accent hover:text-accent-foreground grid place-items-center transition-smooth"
+                  className="w-9 h-9 rounded-lg bg-foreground/10 hover:bg-accent hover:text-accent-foreground grid place-items-center transition-smooth"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -38,7 +38,7 @@ const Footer = () => {
           {/* Programs */}
           <div>
             <h4 className="font-display font-semibold mb-4">Programs</h4>
-            <ul className="space-y-2 text-sm text-white/70">
+            <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#programs" className="hover:text-accent transition-smooth">Self-Paced Full Stack</a></li>
               <li><a href="#programs" className="hover:text-accent transition-smooth">Live Online Full Stack + AI</a></li>
               <li><a href="#programs" className="hover:text-accent transition-smooth">Offline Full Stack + AI Career</a></li>
@@ -49,7 +49,7 @@ const Footer = () => {
           {/* Company */}
           <div>
             <h4 className="font-display font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-white/70">
+            <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#why-us" className="hover:text-accent transition-smooth">Why Us</a></li>
               <li><a href="#about" className="hover:text-accent transition-smooth">About Us</a></li>
               <li><a href="#faq" className="hover:text-accent transition-smooth">FAQ</a></li>
@@ -61,7 +61,7 @@ const Footer = () => {
           {/* Contact — critical for Google Ads NAP consistency */}
           <div>
             <h4 className="font-display font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-3 text-sm text-white/70">
+            <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
                 <a
                   href="tel:+919987896573"
@@ -100,7 +100,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/60">
+        <div className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} XplosiveWebTech. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link to="/privacy-policy" className="hover:text-accent transition-smooth">Privacy Policy</Link>
