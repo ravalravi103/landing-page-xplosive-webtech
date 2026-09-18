@@ -10,6 +10,7 @@ import Mentors from "@/components/landing/Mentors";
 import Testimonials from "@/components/landing/Testimonials";
 import FAQ from "@/components/landing/FAQ";
 import AboutUs from "@/components/landing/AboutUs";
+import PlacementPartners from "@/components/landing/PlacementPartners";
 import CTA from "@/components/landing/CTA";
 import Footer from "@/components/landing/Footer";
 
@@ -26,6 +27,7 @@ const Index = () => {
       <Mentors />
       <Curriculum />
       <Testimonials />
+      <PlacementPartners />
       <ProgramComparison />
       <FAQ />
       <CTA />
