@@ -1,4 +1,4 @@
-import { Eye, Target, Quote } from "lucide-react";
+import { Eye, Target, Quote, AlertTriangle } from "lucide-react";
 
 // TODO: Replace all placeholder values below with real content.
 const founder = {
@@ -9,11 +9,14 @@ const founder = {
     "I started XplosiveWebTech because I saw talented people fail to get jobs — not because they lacked ability, but because their training was disconnected from what companies actually need. We built this institute to bridge that gap: real skills, real projects, real mentors.",
 };
 
+const problemStat =
+  "Over 90% of BSc IT, MSc IT, and CS Engineering graduates never pursue coding as a profession — not because they lack talent, but because they lack structured, directional guidance. We exist to close that gap.";
+
 const vision =
-  "To become India's most trusted tech training institute — where every student graduates job-ready, not just certificate-ready.";
+  "To become India's most trusted tech training institute — turning every IT graduate who dreams of a coding career into a confident, job-ready software professional, regardless of where they start.";
 
 const mission =
-  "To deliver industry-aligned, mentor-driven tech education that empowers students to build real products, crack top interviews, and thrive in their careers.";
+  "To provide structured, discipline-driven, industry-oriented training — online and offline — through systematic, AI-powered, mentor-led programs that give IT and CS students the clear direction, practical skills, and professional foundation they were never given in college.";
 
 const stats = [
   { value: "500+", label: "Students Trained" },
@@ -28,14 +31,27 @@ const AboutUs = () => {
       <div className="container-tight">
 
         {/* Section label */}
-        <div data-reveal className="text-center mb-14">
+        <div data-reveal className="text-center mb-10">
           <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary">
             About Us
           </span>
           <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-secondary">
-            Built by a developer,{" "}
-            <span className="text-gradient">for developers</span>
+            Built to close{" "}
+            <span className="text-gradient">the guidance gap</span>
           </h2>
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+            Thousands of IT graduates have the potential — they just never had the right direction.
+          </p>
+        </div>
+
+        {/* Problem statement callout */}
+        <div data-reveal className="mb-12 rounded-2xl border border-primary/30 bg-primary/6 px-6 py-5 flex gap-4 items-start">
+          <div className="shrink-0 mt-0.5 w-9 h-9 rounded-lg gradient-primary grid place-items-center">
+            <AlertTriangle className="w-4 h-4 text-primary-foreground" />
+          </div>
+          <p className="text-secondary text-sm md:text-base leading-relaxed font-medium">
+            {problemStat}
+          </p>
         </div>
 
         {/* Two-column: photo left, content right */}

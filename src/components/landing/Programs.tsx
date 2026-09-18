@@ -7,7 +7,9 @@ const programs = [
     badge: "Best Value",
     icon: Play,
     title: "Self-Paced Full Stack",
+    originalPrice: "₹7,999",
     price: "₹5,999",
+    discount: "25% OFF",
     mode: "Online · Learn Anywhere",
     modeEmoji: "🌐",
     for: "Learn at your own pace, on your own schedule.",
@@ -28,7 +30,9 @@ const programs = [
     badge: "Most Popular",
     icon: Monitor,
     title: "Live Online Full Stack + AI",
+    originalPrice: "₹23,999",
     price: "₹17,999",
+    discount: "25% OFF",
     mode: "Online · Live Classes",
     modeEmoji: "💻",
     for: "Structured learning with a real teacher, from anywhere.",
@@ -49,7 +53,9 @@ const programs = [
     badge: "Our Flagship",
     icon: MapPin,
     title: "Offline Full Stack + AI Career",
+    originalPrice: "₹53,999",
     price: "₹39,999",
+    discount: "25% OFF",
     mode: "Offline · Bhayander",
     modeEmoji: "📍",
     for: "Classroom learning with personal mentoring & career support.",
@@ -70,7 +76,9 @@ const programs = [
     badge: "Most Personal",
     icon: User,
     title: "1:1 Full Stack Career Mentorship",
+    originalPrice: "₹93,999",
     price: "₹69,999",
+    discount: "25% OFF",
     mode: "Online · Fully Personal",
     modeEmoji: "🎯",
     for: "A dedicated mentor, focused entirely on you.",
@@ -102,6 +110,10 @@ const Programs = () => {
           <p className="mt-4 text-muted-foreground">
             Every program teaches the same core Full Stack & AI skills. What changes is how much live support, mentoring and career help you receive.
           </p>
+          <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-accent text-sm font-semibold">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            Limited time — 25% off all programs
+          </div>
         </div>
 
         <div className="mt-14 grid sm:grid-cols-2 gap-6">
@@ -157,11 +169,16 @@ const Programs = () => {
 
                 <div className={`mt-5 pt-4 border-t flex items-center justify-between ${p.highlight ? "border-white/20" : "border-border/60"}`}>
                   <div>
-                    <div className={`font-display text-2xl font-bold ${p.highlight ? "text-white" : "text-secondary"}`}>
-                      {p.price}
+                    <div className="flex items-center gap-2">
+                      <span className={`text-sm font-medium line-through decoration-2 ${p.highlight ? "text-white/40" : "text-muted-foreground"}`}>
+                        {p.originalPrice}
+                      </span>
+                      <span className="gradient-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-md shadow-accent-glow">
+                        {p.discount}
+                      </span>
                     </div>
-                    <div className={`text-xs ${p.highlight ? "text-white/60" : "text-muted-foreground"}`}>
-                      Starting price
+                    <div className={`font-display text-2xl font-bold mt-0.5 ${p.highlight ? "text-white" : "text-secondary"}`}>
+                      {p.price}
                     </div>
                   </div>
                   <Button variant={p.highlight ? "accent" : "hero"} size="sm" asChild>

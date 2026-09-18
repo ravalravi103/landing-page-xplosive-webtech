@@ -10,6 +10,11 @@ const Hero = () => {
         className="absolute inset-0 -z-55 mt-20"
         style={{ backgroundImage: `url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
       />
+      {/* Color gradient over the background image */}
+      <div
+        className="absolute inset-0 -z-[30]"
+        style={{ background: "linear-gradient(135deg, hsl(206 87% 8% / 0.93) 0%, hsl(209 98% 18% / 0.82) 50%, hsl(195 85% 32% / 0.68) 100%)" }}
+      />
       <div className="absolute inset-0 -z-10 grid-pattern opacity-40" />
       <div data-parallax="0.2" className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary-glow/20 blur-3xl -z-10 animate-glow-pulse" />
 

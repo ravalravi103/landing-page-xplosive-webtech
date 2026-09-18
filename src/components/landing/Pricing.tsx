@@ -5,7 +5,9 @@ import { Check, X } from "lucide-react";
 const tiers = [
   {
     name: "Single Track",
-    price: "₹29,999",
+    originalPrice: "₹35,999",
+    price: "₹26,999",
+    discount: "25% OFF",
     sub: "per program · 3 months",
     features: ["Choose any one program", "1:1 offline mentorship", "4+ real projects", "Resume + interview prep", "Placement assistance"],
     cta: "Enroll Now",
@@ -13,7 +15,9 @@ const tiers = [
   },
   {
     name: "Full Stack + AI",
-    price: "₹59,999",
+    originalPrice: "₹71,999",
+    price: "₹53,999",
+    discount: "25% OFF",
     sub: "Hero program · 6 months",
     features: ["Frontend + Backend + AI", "1:1 private mentorship", "8+ production projects", "System design coaching", "Dedicated placement cell", "Lifetime alumni access"],
     cta: "Book Free Demo",
@@ -21,7 +25,9 @@ const tiers = [
   },
   {
     name: "Career Pro",
-    price: "₹89,999",
+    originalPrice: "₹1,07,999",
+    price: "₹80,999",
+    discount: "25% OFF",
     sub: "All access · 9 months",
     features: ["All programs included", "Priority 1:1 mentorship", "Cloud + Architecture track", "Mock interviews (10+)", "Job offer assistance", "Lifetime updates"],
     cta: "Talk to Mentor",
@@ -49,17 +55,20 @@ const Pricing = () => {
           <p className="mt-4 text-muted-foreground">
             We charge a fraction of what big bootcamps charge — and deliver more personalized attention.
           </p>
+          <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-accent text-sm font-semibold">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            Limited time offer — 25% off on all plans
+          </div>
         </div>
 
         <div className="mt-14 grid md:grid-cols-3 gap-6">
           {tiers.map((t, i) => (
             <Card
               key={t.name}
-              className={`relative p-7 transition-smooth hover:-translate-y-1 animate-fade-in-up ${
-                t.highlight
+              className={`relative p-7 transition-smooth hover:-translate-y-1 animate-fade-in-up ${t.highlight
                   ? "gradient-hero text-primary-foreground border-accent shadow-elevated scale-[1.02]"
                   : "gradient-card border-border/70 shadow-soft hover:shadow-card"
-              }`}
+                }`}
               style={{ animationDelay: `${i * 90}ms` }}
             >
               {t.highlight && (
@@ -67,9 +76,19 @@ const Pricing = () => {
                   Most Popular
                 </span>
               )}
-              <h3 className={`font-display text-xl font-bold ${t.highlight ? "text-white" : "text-secondary"}`}>{t.name}</h3>
-              <div className="mt-3 flex items-baseline gap-1">
-                <span className={`font-display text-4xl font-bold ${t.highlight ? "text-white" : "text-secondary"}`}>{t.price}</span>
+              <div className="flex items-start justify-between gap-2">
+                <h3 className={`font-display text-xl font-bold ${t.highlight ? "text-white" : "text-secondary"}`}>{t.name}</h3>
+                <span className="shrink-0 gradient-accent text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-accent-glow">
+                  {t.discount}
+                </span>
+              </div>
+              <div className="mt-3">
+                <span className={`text-sm font-medium line-through decoration-2 ${t.highlight ? "text-white/50" : "text-muted-foreground"}`}>
+                  {t.originalPrice}
+                </span>
+                <div className="flex items-baseline gap-1 mt-1">
+                  <span className={`font-display text-4xl font-bold ${t.highlight ? "text-white" : "text-secondary"}`}>{t.price}</span>
+                </div>
               </div>
               <div className={`text-sm ${t.highlight ? "text-white/70" : "text-muted-foreground"}`}>{t.sub}</div>
 
